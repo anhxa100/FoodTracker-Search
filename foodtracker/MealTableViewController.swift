@@ -35,6 +35,7 @@ class MealTableViewController: UITableViewController, UISearchResultsUpdating {
         //MARK: Search
         
         filterMeals = meals
+        
         definesPresentationContext = true
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = true
@@ -135,8 +136,8 @@ class MealTableViewController: UITableViewController, UISearchResultsUpdating {
                 let newIndexPath = IndexPath(row: filterMeals.count, section: 0)
                 meals.append(meal)
                 filterMeals = meals
-                tableView.reloadData()
-//                tableView.reloadRows(at: [newIndexPath], with: .automatic)
+//                tableView.reloadData()
+                tableView.reloadRows(at: [newIndexPath], with: .automatic)
             }
             
             // Save the meals.
